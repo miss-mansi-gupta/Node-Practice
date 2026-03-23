@@ -1,0 +1,82 @@
+## POST API
+POST Method http://localhost:3000/notes
+request -> body -> raw -> json
+{
+    "title": "test title 1",
+    "description": "test description 1"
+}
+
+Response: note created
+
+## GET API
+GET Method http://localhost:3000/notes
+
+Response: [
+    {
+        "title": "test title 1",
+        "description": "test description 1"
+    },
+    {
+        "title": "test title 2",
+        "description": "test description 2"
+    },
+    {
+        "title": "test title 3",
+        "description": "test description 3"
+    },
+    {
+        "title": "test title 4",
+        "description": "test description 4"
+    }
+]
+
+## DELETE API
+DELETE Method http://localhost:3000/notes/:id
+http://localhost:3000/notes/2
+
+Response: note deleted
+
+## Using GET API we can see below Response After Deleting
+
+Response: [
+    {
+        "title": "test title 1",
+        "description": "test description 1"
+    },
+    {
+        "title": "test title 2",
+        "description": "test description 2"
+    },
+    null,
+    {
+        "title": "test title 4",
+        "description": "test description 4"
+    }
+]
+
+## PATCH API
+PATCH Method http://localhost:3000/notes/1
+request -> body -> raw -> json
+{
+    "description": "Modified Test Description"
+}
+
+Response: note updated
+
+## Using GET API we can see below Response After Deleting
+
+Response: [
+    {
+        "title": "test title 1",
+        "description": "test description 1"
+    },
+    {
+        "title": "test title 2",
+        "description": "Modified Test Description"
+    },
+    null,
+    {
+        "title": "test title 4",
+        "description": "test description 4"
+    }
+]
