@@ -1,0 +1,33 @@
+create day-2 folder
+~ Program server to response to users
+~ Deploy server
+
+vs code me github k through login krna
+
+
+~ Understanding what are APIs
+~ What is REST API
+~ Creating mini project with REST API
+
+
+
+
+
+
+
+
+
+
+run "npm init -y" for initiating node js app
+
+for creating server, install express package
+
+in server.js, will write code
+
+
+
+node server.js
+npx nodemon server.js
+
+npm - package manager
+npx - pachkage executor
