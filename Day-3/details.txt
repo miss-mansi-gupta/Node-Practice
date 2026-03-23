@@ -1,0 +1,11 @@
+notes will be stored in the form of array of objects using postman api calls
+[
+    {
+        "title": "test title 1",
+        "description": "test description 1"
+    },
+    {
+        "title": "test title 2",
+        "description": "test description 2"
+    }
+]
