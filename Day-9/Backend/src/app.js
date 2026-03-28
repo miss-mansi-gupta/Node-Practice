@@ -4,12 +4,14 @@
 const express = require("express")
 const noteModel = require("./models/notes.model")
 const cors = require("cors")
+const path = require("path")
 
 const app = express()
 
-
+// using middlewares
 app.use(cors()) // accepts cross origin requests
-app.use(express.json()) // using middleware
+app.use(express.json()) // for reading json data
+app.use(express.static("./public")) // public folder ki js & css file available krta hai
 
 // POST /api/notes
 // create new note and save data in mongob
@@ -59,6 +61,11 @@ app.patch("/api/notes/:id", async (req, res) => {
     res.status(200).json({
         message: "Note updtaed successfully"
     })
+})
+
+// below code handles api which is not created - http://localhost:3000/<random_value>
+app.use('*name', (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "/public/index.html"))
 })
 
 module.exports = app;
