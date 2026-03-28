@@ -7,7 +7,7 @@ const App = () => {
   // console.log("hello integration")
 
   function fetchNotes() {
-    axios.get('http://localhost:3000/api/notes')
+    axios.get('https://node-practice-yhph.onrender.com/api/notes')
       .then((res) => {
         setNotes(res.data.notes)
       })
@@ -20,7 +20,7 @@ const App = () => {
   function handleSubmit(e) {
     e.preventDefault()
     const { title, description } = e.target.elements
-    axios.post('http://localhost:3000/api/notes', {
+    axios.post('https://node-practice-yhph.onrender.com/api/notes', {
       title: title.value,
       description: description.value
     })
@@ -32,7 +32,7 @@ const App = () => {
 
   function handleDeleteNote(noteId) {
     console.log(noteId)
-    axios.delete('http://localhost:3000/api/notes/'+noteId)
+    axios.delete('https://node-practice-yhph.onrender.com/api/notes/'+noteId)
     .then(res => {
       console.log(res.data)
       fetchNotes()
