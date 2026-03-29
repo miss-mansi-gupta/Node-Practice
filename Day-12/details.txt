@@ -1,0 +1,71 @@
+1. run cmd npm init -y
+
+2. run cmd npm i express mongoose nodemon dotenv jsonwebtoken cookie-parser
+
+3. Create and config server
+a. In src -> app.js file do below 2 things
+b. code -> server ko create krna
+c. code -> server ko config krna
+
+4. Start server
+a. In server.js file
+b. code -> server ko start krna
+
+5. Add script for starting backend project
+a. In package.json file,
+b. add script => "dev": "npx nodemon server.js",
+c. and run cmd npm run dev
+
+6. Database connection
+a. In src -> config folder -> database.js file
+b. create function for database connection
+c. copy Mongo DB connection string and keep it in .env file (because we never push this .env file to github for security)
+d. use MONGO_URI string value in database.js file
+e. In server.js file on top add this line -> require("dotenv").config(), which makes .env file's variable (for it's value) accessible in other files
+f. use MONGO_URI in databse.js file for db connction and export the function
+g. call connectToDB in server.js file for calling it while starting server 
+
+7. Schema and Model Creation for storing data
+a. In src -> models folder -> user.del.js file 
+b. For creating data format, create Schema using mongoose.Schema and pass data format in json form 
+c. For performing operation on user, create Model using mongoose.model and pass model-name and userSchema
+d. export userModel
+
+8. Create Register API
+a. In src -> routes folder -> auth.routes.js
+b. creating register api in auth.routes.js and export it and use it in app.js file 
+c. for creating api in file other than app.js file, need to use express.Router()
+d. const authRouter = express.Router()
+e. create api with post method
+f. call/use userModel for creating api /register -> userModel.create({})
+g. export authRouter 
+h. require authRouter in app.js file and add this below line for using routes 
+i. app.use("/api/auth", authRouter) // /api/auth/register
+
+9. For making email unique for storing every user 
+a. In src -> models folder -> user.model.js file 
+b. update schema for email like below
+c. email: {
+        type: String,
+        unique: [ true, "With this email user account already exists" ]
+    },
+d. this will show mongoose error (500 Internal Server Error) if user again tries to register with same or already existing email address 
+e. for handling 500 error, in auth.routes.js file add condition for checking email existence in db using userModel.findOne({email}) and if yes then this res with status 400 and json message
+
+10. Creating Token with the help of JWT_Secret and User data
+a. require jsonwebtoken in auth.routes.js file 
+b. add jwtsecret value in JWT_SECRET variable in .env file 
+c. perform jwt signature using below code 
+    const token = jwt.sign(
+        {
+            id: user._id
+        },
+        process.env.JWT_SECRET
+    )
+d. cookies-storage client side pe hota h 
+e. is cookies-storage ka access server k pass hota h 
+f. mtlb server cookies-storage pe kuch b data likh bhi skta ha or use padh bhi skta h 
+g. install cookie-parser then require it in app.js file and use is as a middleware
+h. storing jwttoken in cookie storage 
+    res.cookie("jwt_token", token)
+i. storing token in cookie because whenever client requires token reads it from cookies 
