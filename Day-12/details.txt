@@ -69,3 +69,6 @@ g. install cookie-parser then require it in app.js file and use is as a middlewa
 h. storing jwttoken in cookie storage 
     res.cookie("jwt_token", token)
 i. storing token in cookie because whenever client requires token reads it from cookies 
+j. cookie storage ki properties client side pe store hoti hai(browser/postman)
+i. cookie storage me server kuch b store kr skta hai 
+ii. cookie storage ka kuch b data server padh skta hai 

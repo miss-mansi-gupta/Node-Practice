@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken") // for creating token
 
 const authRouter = express.Router() // for creating api in file other than app.js file, need to use express.Router()
 
-// POST /register
+// POST /api/auth/register
 authRouter.post("/register", async (req, res) => {
     const { name, email, password } = req.body
 
