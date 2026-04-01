@@ -1,0 +1,25 @@
+=> Authentication
+    => register 
+        user ka data save krna db me
+        token user ko create krke dena
+    => login
+    => logout (token blacklisting)
+    => [OTP based registration]
+
+=> POST
+    => create
+    => can see the feed
+    => like posts (collection types)
+    => save post
+
+=> Users
+    => followers
+    => following
+
+user => {
+    username: String,
+    email: String,
+    password: String,
+    bio: String,
+    profile_image: String
+}
