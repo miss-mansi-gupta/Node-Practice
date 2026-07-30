@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     bio: String,
     profileImage: {
         type: String,
-        default: "https://ik.imagekit.io/hnoglyswo0/avatar-gender-neutral-silhouette-vector-600nw-2470054311.webp"
+        default: "https://ik.imagekit.io/z66hwhbjx/default_profile_image.jpg"
     }
 })
 
