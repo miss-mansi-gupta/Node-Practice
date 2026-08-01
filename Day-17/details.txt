@@ -1,0 +1,88 @@
+=> Authentication
+    => register 
+        user ka data save krna db me
+        token user ko create krke dena
+    => login
+    => logout (token blacklisting)
+    => [OTP based registration]
+
+=> POST
+    => create
+    => can see the feed
+    => like posts (collection types)
+    => save post
+
+=> Users
+    => followers
+    => following
+
+user => {
+    username: String,
+    email: String,
+    password: String,
+    bio: String,
+    profile_image: String
+}
+
+post => {
+    caption: String,
+    img_url: String,
+    user: userId,
+}
+
+follows [Edge Collection]=> 
+{
+    _id,
+    follower: user-B,
+    followee: user-A,
+    createdAt: Date
+}
+{
+    _id,
+    follower: user-C,
+    followee: user-D,
+    createdAt: Date
+}
+{
+    _id,
+    follower: user-D,
+    followee: user-B,
+    createdAt: Date
+}
+
+
+Database - insta-clone
+collection - users and posts and follows
+
+users { _id, username, email, password, bio, profileImage }
+
+posts { caption, imgUrl, user: userId, createdAt }
+
+stories { user: userId }
+
+
+Follows [Edge Collection] { _id, follower, followee, createdAt}
+
+
+User Collection contains multiple documents means multiple user data
+Follows collection will be known as Edge Collection here becuase it is creating relationship between 2 documents 
+
+user  ------>   server
+
+                app
+
+                1. authRouter
+                2. postRouter
+                    a. POST /api/posts -> createPostController -> identifying the user
+                    b. GET /api/posts -> getPostController -> identifying the user
+                    c. GET /api/posts/details/:postID -> getPostDetailsController -> identifying the user
+
+
+
+So all 3 controllers are identifying the user, 
+so we will remove from all of them 
+and create new file inside middlewares folder -> auth.middleware.js file
+
+                    a. POST /api/posts -> identifying the user -> createPostController
+                    b. GET /api/posts -> identifying the user -> getPostController
+                    c. GET /api/posts/details/:postID -> identifying the user -> getPostDetailsController
