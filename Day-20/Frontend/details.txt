@@ -1,0 +1,21 @@
+/login => login form
+/register => registration form
+
+
+4 layers in FrontEnd React Architecture
+
+UI Layer
+=> UI dikhana user ko or navigate krna
+
+Hook Layer
+=> Manage krna State and API Layer ko
+
+State Layer
+=> State manage
+    => loading
+    => user
+    => post list
+    => error
+
+API Layer
+=> Backend se communication
