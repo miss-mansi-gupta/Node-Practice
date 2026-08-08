@@ -1,0 +1,18 @@
+dotenv package ke sath problem hai 
+jab import statement ka use kr rahe hote ho
+jis file ke andar dotenv config method ko call kroge 
+tab sirf usi file kandar environmental values ka use kr skte ho
+
+
+
+Authentication => ALREADY DONE
+Authorization
+Validation
+Verification
+
+Express Validator
+
+
+
+
+user request => app => authRouter => /register => Validation => controller => database => cotroller => user
