@@ -1,0 +1,7 @@
+UI Layer => UI dikhana or navigation handle krna (pages, components)
+
+Hook Layer => Staate and APIs manage krna (hooks)
+
+State Layer => User ka data frontend pe store krna (auth.context.js, posts,context.js)
+
+API Layer => Backend se communicate krne k lea (services/auth.api.js)

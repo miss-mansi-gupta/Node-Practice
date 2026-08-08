@@ -1,0 +1,26 @@
+What is throughput in database?
+
+
+
+
+
+Why not we use REDIS as primary database?
+100000 to 1000000 operations per second
+=> costly => because it uses RAM
+=> query nhi kr skte => stores data in key value pair and value string type me hota hai 
+
+
+
+MONGODB
+=> stores data in BSON format
+20000 to 50000 operations per second
+
+
+
+
+
+redis // for better throughput and latency than mongodb 
+
+multer // for uploading files
+
+node-id3 // file ki details read kr skte h because of this package
