@@ -1,0 +1,36 @@
+Need of Socket.io
+
+
+
+
+server maintaining messages
+A sending msg to server hello B
+B continuously fetching msgs from server
+and vice versa
+using http protocols
+server k upar load bhut pad jata hai qki lagatar dono request kr rhe hote hai
+
+A user          server              B user 
+                A=> hello B
+                B=> hello A
+                B=> mid sem kab hai
+
+
+
+That's why use Socket.io
+
+A user          server              B user
+Postman                             Echo api
+
+io => server
+socket => single user
+socket.io => event driven hota hai
+on => event ko listen krna
+emit => event ko fire krna 
+
+
+
+dono user connection banake rkhte h server se
+
+jis wjh se baar baar request nhi krna pad rha h turant msgs forward kr deta hai
+
