@@ -1,4 +1,7 @@
+// controller has 3 parameters : req, res, next
+
 export async function registerUser(req, res, next) {
+    // throw new Error("encounter an error while registering new user")
     // try {
     //     throw new Error("encountered an error while registering new user")
     // } catch (err) {
@@ -8,7 +11,7 @@ export async function registerUser(req, res, next) {
     //     throw new Error("Password is too weak")
     // } catch (err) {
     //     err.status = 400
-    //     next(err)
+    //     next(err) // errorhandling middleware ko call kar raha hota hai
     // }
     // try {
     //     throw new Error("User already exists, with same email")
