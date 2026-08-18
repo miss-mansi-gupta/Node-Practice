@@ -17,11 +17,12 @@ io.on("connection", (socket) => {
         console.log(msg)
 
         // io.emit => server ko fire krna
+        // jese hi user msg event fire krega server sun lega or server abc event ko fire krna chalu krdega har direction me saare connected user ko
         io.emit("abc", msg)
     })
 })
 
-//task study
+// task study
 // socket.emit()
 // socket.broadcast().emit()
 // io.emit() 
